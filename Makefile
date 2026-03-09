@@ -15,3 +15,11 @@ clean_python_win_cmd:
 	-for /d /r %%i in (__pycache__) do rd /s /q "%%i"
 	-del /s /q *.pyc
 	-rd /s /q .pytest_cache
+
+## Delete not essential files of Node.js & JS and several Node.js & JS libraries
+clean_js_unix:
+	rm -rf .eslintcache .next .turbo .parcel-cache
+clean_js_win_ps:
+	powershell -Command "Remove-Item -Recurse -Force .eslintcache, .next, .turbo, .parcel-cache"
+clean_js_win_cmd:
+	rd /s /q .eslintcache .next .turbo .parcel-cache
