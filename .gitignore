@@ -1,7 +1,8 @@
-__pycache__/
-*.pyc
-.coverage
-
+# IDEs
 .vscode/
 .idea/
 .vs/
+
+# Python
+__pycache__/
+*.pyc
