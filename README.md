@@ -4,4 +4,7 @@ This is an utility that can help you delete not essential directories and files.
 
 ## Usage
 
-For now it doesn't have as many features as it have to have for now.
+### Makefile
+
+0. Install `make`(if hadn't done it yet)
+1. In your terminal and directory with `Makefile` file write `make NAME_OF_COMMAND`
