@@ -23,3 +23,10 @@ clean_js_win_ps:
 	powershell -Command "Remove-Item -Recurse -Force .eslintcache, .next, .turbo, .parcel-cache"
 clean_js_win_cmd:
 	rd /s /q .eslintcache .next .turbo .parcel-cache
+
+clean_cpp_unix:
+	find . -type f \( -name "*.obj" -o -name "*.o" -o -name "*.lib" -o -name "*.a" -o -name "*.idb" -o -name "*.tlog" \) -delete
+clean_cpp_win_cmd:
+	del /s /q *.obj *.o *.lib *.a *.idb *.tlog
+clean_cpp_win_ps:
+	powershell -Command "Get-ChildItem -Recurse -Include *.obj, *.o, *.lib, *.a, *.idb, *.tlog | Remove-Item -Force"
