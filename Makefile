@@ -1,4 +1,4 @@
-## Delete not essential files of Python and several Python libraries
+## Python and libraries
 clean_python_unix:
 	find . -name "**/*.pyc" -delete 
 	find . -name "__pycache__" -type d -exec rm -rf {} +
@@ -16,7 +16,7 @@ clean_python_win_cmd:
 	-del /s /q *.pyc
 	-rd /s /q .pytest_cache
 
-## Delete not essential files of Node.js & JS
+## JS and Node.js
 clean_js_unix:
 	rm -rf .eslintcache .next .turbo .parcel-cache
 clean_js_win_ps:
@@ -24,10 +24,18 @@ clean_js_win_ps:
 clean_js_win_cmd:
 	rd /s /q .eslintcache .next .turbo .parcel-cache
 
-## Delete not essential files of C++
+## C++
 clean_cpp_unix:
 	find . -type f \( -name "*.obj" -o -name "*.o" -o -name "*.lib" -o -name "*.a" -o -name "*.idb" -o -name "*.tlog" \) -delete
 clean_cpp_win_cmd:
 	del /s /q *.obj *.o *.lib *.a *.idb *.tlog
 clean_cpp_win_ps:
 	powershell -Command "Get-ChildItem -Recurse -Include *.obj, *.o, *.lib, *.a, *.idb, *.tlog | Remove-Item -Force"
+
+## OS
+clean_os_unix:
+	find . -type f \( -name "*.DS_Store" -o -name "Thumbs.db" \) -delete
+clean_os_win_ps:
+	powershell -Command "Get-ChildItem -Recurse -Include *.DS_Store, Thumbs.db | Remove-Item -Force"
+clean_os_win_cmd:
+	del /s /q *.DS_Store Thumbs.db
