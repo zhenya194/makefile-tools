@@ -16,7 +16,7 @@ clean_python_win_cmd:
 	-del /s /q *.pyc
 	-rd /s /q .pytest_cache
 
-## Delete not essential files of Node.js & JS and several Node.js & JS libraries
+## Delete not essential files of Node.js & JS
 clean_js_unix:
 	rm -rf .eslintcache .next .turbo .parcel-cache
 clean_js_win_ps:
@@ -24,6 +24,7 @@ clean_js_win_ps:
 clean_js_win_cmd:
 	rd /s /q .eslintcache .next .turbo .parcel-cache
 
+## Delete not essential files of C++
 clean_cpp_unix:
 	find . -type f \( -name "*.obj" -o -name "*.o" -o -name "*.lib" -o -name "*.a" -o -name "*.idb" -o -name "*.tlog" \) -delete
 clean_cpp_win_cmd:
