@@ -39,3 +39,12 @@ clean_os_win_ps:
 	powershell -Command "Get-ChildItem -Recurse -Include *.DS_Store, Thumbs.db | Remove-Item -Force"
 clean_os_win_cmd:
 	del /s /q *.DS_Store Thumbs.db
+
+## DB
+clean_db_unix:
+	find . -type f \( -name "*.db" \) -delete
+clean_db_win_ps:
+	powershell -Command "Get-ChildItem -Recurse -Include *.db | Remove-Item -Force"
+clean_db_win_cmd:
+	del /s /q *.db
+
